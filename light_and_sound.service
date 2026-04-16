@@ -1,0 +1,14 @@
+[Unit]
+Description=Service de lecture des capteurs GrovePi
+After=network.target
+
+[Service]
+# Remplacez 'pi'
+User=pi
+ExecStart=/usr/bin/python3 /home/pi/light_and_sound.py
+Restart=always
+RestartSec=5
+WorkingDirectory=/home/pi
+
+[Install]
+WantedBy=multi-user.target
